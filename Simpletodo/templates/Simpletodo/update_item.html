@@ -1,0 +1,12 @@
+<h1>update item </h1>
+{% if i %}
+<h1>dd</h1>
+{% else %}
+<h1>qqq</h1>
+{% endif %}
+<form action="/simple/{{ i.id }}/update_item/" method="post" id="add_new">
+    {% csrf_token %}
+    <p>item name<input type="text" name="item_name" id="item_name" value="{{ i.item_name }}"><br/></p>
+    <p>description <input type="text" name="description" id="description" value="{{ i.item_name }}"></p>
+    <button type="submit"  value="submit">submit</button>
+</form>

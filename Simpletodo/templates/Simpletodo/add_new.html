@@ -1,0 +1,8 @@
+<h1>add new item </h1>
+
+<form action="/simple/add_new/" method="post" id="add_new">
+    {% csrf_token %}
+    item name<input type="text" name="item_name" id="item_name"><br/>
+    description <input type="text" name="description" id="description">
+    <button type="submit"  value="submit">submit</button>
+</form>

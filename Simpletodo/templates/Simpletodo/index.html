@@ -1,0 +1,30 @@
+
+{% if item %}
+    <h1>待完成事项</h1>
+    {% for i in item %}
+    {% if i.flag == False %}
+    <ul>
+        <li>{{ i.item_name }}
+            {% if i.description %}{{ i.description }} {% endif %}
+            <a href="/simple/{{ i.id }}/delete_item" name="delete_item">delete</a>
+            <a href="/simple/{{ i.id }}/update_item" name="update_item">update</a>
+            <a href="/simple/{{ i.id }}/tofinish_item" name="tofinish_item">finish</a>
+        </li>
+    </ul>
+    {% endif %}
+    {% endfor %}
+
+    <h1>已完成事项</h1>
+    {% for i in item %}
+    {% if i.flag %}
+    <ul>
+        <li>{{ i.item_name }}
+            {% if i.description %}{{ i.description }} {% endif %}
+            <a href="/simple/{{ i.id }}/delete_item" name="delete_item">delete</a>
+            <a href="/simple/{{ i.id }}/notfinish_item" name="notfinish_item">not finish yet</a>
+        </li>
+    </ul>
+    {% endif %}
+    {% endfor %}
+{% endif %}
+<a href="/simple/add_new/">add a new item</a>
