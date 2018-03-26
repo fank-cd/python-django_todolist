@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rango</title>
+    </head>
+
+    <body>
+        <h1>Register with Rango</h1>
+
+        Rango says: <strong>thank you for registering!</strong>
+        <a href="/default/">Return to the homepage.</a><br />
+        <form id="user_form" method="post" action="/default/zanshi/">
+            {% csrf_token %}
+            {{ form }}
+            <input type="submit" name="submit" value="Register" />
+        </form>
+    </body>
+</html>

@@ -8,13 +8,15 @@ from django.db import models
 class User(models.Model):
     user_name = models.CharField(max_length=120)
     user_pass = models.CharField(max_length=120)
+    def __unicode__(self):
+        return self.user_name
 
 class Item(models.Model):
     item_name = models.CharField(max_length=20)
     item_description = models.CharField(max_length=120,blank=True,null=True)
     flag = models.BooleanField(default=False)
     pub_time =models.DateTimeField(auto_now_add=True)
-    priority = models.IntegerField()
+    priority = models.IntegerField(max_length=10)
     user =models.ForeignKey(User,on_delete=models.CASCADE)
 
     def __unicode__(self):
@@ -23,3 +25,8 @@ class Item(models.Model):
     class Meta:
         ordering = ['-priority','pub_time']
 
+class Biu(models.Model):
+    biu = models.CharField(max_length=120)
+
+    def __unicode__(self):
+        return self.biu
