@@ -7,8 +7,17 @@
 <body>
     <div>
         <ul>
+            {% if logged %}
+            <p>you're logged in </p>
+            <a href="{% url 'default:logout' %}">click here to logout</a>
+            {% else %}
+            <p>click here to login in</p>
             <li>
                 <a href="{% url 'default:login'%}">login</a>
+            </li>
+            {% endif %}
+            <li>
+                <a href="{% url 'default:register' %}">register</a>
             </li>
         </ul>
     </div>

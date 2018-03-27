@@ -17,6 +17,7 @@ from django.conf.urls import url,include
 from django.contrib import admin
 
 urlpatterns = [
+    #url(r'^', include('defaulttodo.urls')),
     url(r'^admin/', admin.site.urls),
     url(r'^simple/',include('Simpletodo.urls')),
     url(r'^default/',include('defaulttodo.urls')),

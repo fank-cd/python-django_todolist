@@ -1,12 +1,15 @@
 #coding:utf-8
 from django import forms
-from .models import Item,User,Biu
-
+from .models import Item,Biu
+from django.contrib.auth.models import User
 class UserForm(forms.ModelForm):
-    user_pass =forms.CharField(max_length=120,widget=forms.PasswordInput())
+    username =forms.CharField()
+    password = forms.CharField(widget=forms.PasswordInput())
     class Meta:
         model = User
-        fields =('user_name','user_pass')
+        fields = ('username','email','password')
+
+
 class ItemForm(forms.ModelForm):
 
     item_name = forms.CharField(max_length=120,help_text='你必须输入这个笨蛋')
