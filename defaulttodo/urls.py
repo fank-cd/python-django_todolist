@@ -9,4 +9,5 @@ urlpatterns = [
     url(r'^login/$',views.user_login,name='login'),
     url(r'^logout/$',views.user_logout,name='logout'),
     #url(r'^zanshi/$',views.zanshi,name='zanshi')
+    url(r'^add_item/$',views.add_item,name='add_item'),
 ]

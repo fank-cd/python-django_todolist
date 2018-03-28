@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block title %}Add item {% endblock %}
+
+{% block body_block %}
+        <form id="user_form" method="post" action="/default/add_item/">
+            {% csrf_token %}
+            <!-- Display each form. The as_p method wraps each element in a paragraph
+                 (<p>) element. This ensures each element appears on a new line,
+                 making everything look neater. -->
+            {{ item_form.as_p }}
+            <input type="submit" name="submit" value="add_item" />
+        </form>
+
+{% endblock %}

@@ -1,26 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-    <div>
-        <ul>
-            {% if logged %}
-            <p>you're logged in </p>
-            <a href="{% url 'default:logout' %}">click here to logout</a>
-            {% else %}
-            <p>click here to login in</p>
-            <li>
-                <a href="{% url 'default:login'%}">login</a>
-            </li>
-            {% endif %}
-            <li>
-                <a href="{% url 'default:register' %}">register</a>
-            </li>
-        </ul>
-    </div>
+{% extends 'base.html' %}
 
-</body>
-</html>
+{% load staticfiles %}
+
+{% block title %}index{% endblock %}
+
+{% block body_block %}
+<h1>There is index page</h1>
+{% endblock %}
