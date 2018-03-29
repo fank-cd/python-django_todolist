@@ -5,18 +5,20 @@ from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from defaulttodo.froms import UserForm, BiuForm, ItemForm
 from django.shortcuts import redirect
-from defaulttodo.models import Item, User
+from defaulttodo.models import Item
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 
 def index(request):
-    logged = False
+    item_list = []
     if request.user.is_authenticated():
-        logged = True
-
-    context = {'logged': logged}
+        print "dd"
+        user= request.user
+        item_list = Item.objects.filter(user=user).order_by('-priority')
+        print item_list
+    context = {'item_list':item_list}
     return render(request, 'default/index.html', context=context)
 
 @login_required()
@@ -38,6 +40,7 @@ def add_item(request):
         item_form = ItemForm()
     context = {'item_form': item_form}
     return render(request, 'default/add_item.html', context=context)
+
 
 
 def resgister(request):

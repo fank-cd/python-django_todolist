@@ -6,4 +6,14 @@
 
 {% block body_block %}
 <h1>There is index page</h1>
+{% if item_list %}
+    <ul>
+    {% for i in item_list %}
+    <li>{{ i.item_name }}</li>
+    {% endfor %}
+    </ul>
+{% endif %}
+{% if user.authenticated %}
+    <a href="{url % defauolt:add_item %}">add item</a>
+{% endif %}
 {% endblock %}

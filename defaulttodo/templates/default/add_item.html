@@ -5,6 +5,7 @@
 {% block title %}Add item {% endblock %}
 
 {% block body_block %}
+        <h1>here we add item </h1>
         <form id="user_form" method="post" action="/default/add_item/">
             {% csrf_token %}
             <!-- Display each form. The as_p method wraps each element in a paragraph

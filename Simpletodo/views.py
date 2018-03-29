@@ -8,6 +8,7 @@ from django.http import HttpResponseRedirect
 
 def index(request):
     item_list = Item.objects.order_by('id')
+    #print item_list
     return render(request,  'Simpletodo/index.html',  context={'item':item_list})
 
 
