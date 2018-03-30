@@ -6,14 +6,27 @@
 
 {% block body_block %}
 <h1>There is index page</h1>
-{% if item_list %}
+{% if user.is_authenticated %}
+    {% if item_list %}
+    <h2>here is not finished issue</h2>
     <ul>
     {% for i in item_list %}
-    <li>{{ i.item_name }}</li>
+        <li><a href="{% url 'default:item_detail' i.id %}">{{ i.item_name }}</a></li>
     {% endfor %}
     </ul>
-{% endif %}
-{% if user.authenticated %}
-    <a href="{url % defauolt:add_item %}">add item</a>
+
+    {% endif %}
+    {% if item_list_done %}
+
+    <hr />
+    <h2>here is your finished issue </h2>
+    <ul>
+        {% for i in item_list_done %}
+        <li><a href="/default/{{ i.id }}/item">{{ i.item_name }}</a></li>
+        {% endfor %}
+     {% endif %}
+    </ul>
+{% else %}
+<strong>you 're not logged </strong>
 {% endif %}
 {% endblock %}

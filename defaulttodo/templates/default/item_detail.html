@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block title %}issue -{{ item_name }} {% endblock %}
+
+{% block body_block %}
+{% if user.is_authenticated %}
+    {% if item_name %}
+    <h1>here is your issue <i><font color="red">{{ item_name }}</font></i> </h1>
+    <div>
+        <ul>
+            <li><p>Item name:{{ item_name }}</p></li>
+            {% if item_description %}
+            <li><p>item description :{{ item_description }}</p></li>
+            {% endif %}
+            <li><p>pub time:{{ pub_time }}</p></li>
+            {{ item_flag }}
+            <li><a href="{% url 'default:update_item' item_id %}">update </a></li>
+            {% if not item_flag %}
+            <li><a href="{% url 'default:tofinish_item' item_id %}">tofinish </a></li>
+
+            {% else %}
+             <li><a href="{% url 'default:notfinish_item' item_id %}">notfinish </a></li>
+            {% endif %}
+            <li><a href="{% url 'default:delete_item' item_id %}">delete </a></li>
+        </ul>
+    </div>
+    {% endif %}
+
+{% endif %}
+
+
+{% endblock %}
