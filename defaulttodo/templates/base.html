@@ -1,22 +1,22 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>todolist -{% block title %}How to tango with django {% endblock %}</title>
-</head>
-<body>
-    <div>
-        {% block body_block %}{% endblock %}
-    </div>
+<!DOCTYPE html >
+<html >
+<head >
+    <title > todolist - { % block title % }How to tango with django { % endblock % } < /title >
+< / head >
+<body >
+    <div >
+        { % block body_block % }{ % endblock % }
+    < / div >
 
-    <hr />
-    <div>
-        <ul>
-        {% if user.is_authenticated %}
-        <li><a href="{% url 'default:logout' %}">Logout</a> </li>
-        <li><a href="{% url 'default:add_item' %}">add item</a> </li>
-    {% else %}
-        <li><a href="{% url 'default:register' %}">Register Here</a> </li>
-        <li><a href="{% url 'default:login' %}">Login</a> </li>
+    <hr / >
+    <div >
+        <ul >
+        { % if user.is_authenticated % }
+        <li > <a href = "{% url 'default:logout' %}" > Logout < /a > < / li >
+        <li > <a href = "{% url 'default:add_item' %}" > add item < /a > < / li >
+    { % else % }
+        <li > <a href = "{% url 'default:register' %}" > Register Here < /a > < / li >
+        <li > <a href = "{% url 'default:login' %}" > Login < /a > < / li >
      {% endif %}
         <li><a href="{% url 'default:index' %}">index</a> </li>
         </ul>

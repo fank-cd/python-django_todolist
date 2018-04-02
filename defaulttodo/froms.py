@@ -16,9 +16,10 @@ class UserForm (forms.ModelForm):
 
 class ItemForm (forms.ModelForm):
 
-    item_name = forms.CharField(max_length=120,label='Item name')
+    item_name = forms.CharField(max_length=120, label='Item name')
     item_description = forms.CharField(max_length=120, required=False)
-    priority = forms.IntegerField(max_value=10,min_value=0) #widget=forms.TextInput()
+    priority = forms.IntegerField(max_value=10,
+                                  min_value=0)  # widget=forms.TextInput()
     flag = forms.BooleanField(widget=forms.HiddenInput(), required=False)
 
     class Meta:

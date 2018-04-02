@@ -4,7 +4,6 @@ from __future__ import unicode_literals
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect
 from defaulttodo.froms import UserForm, BiuForm, ItemForm
-from django.shortcuts import redirect
 from defaulttodo.models import Item
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.decorators import login_required
@@ -26,12 +25,13 @@ def index(request):
 
 
 @login_required()
-def notfinish_item(request,pk):
-    i = get_object_or_404(Item,pk=pk)
+def notfinish_item(request, pk):
+    i = get_object_or_404(Item, pk=pk)
     if i.flag:
         i.flag = False
         i.save()
     return HttpResponseRedirect('/default/')
+
 
 @login_required()
 def tofinish_item(request, pk):
@@ -82,9 +82,8 @@ def item_detail(request, pk):
     return render(request, 'default/item_detail.html', context=context)
 
 
-
 @login_required()
-def delete_item(request,pk):
+def delete_item(request, pk):
     i = get_object_or_404(Item, pk=pk)
     i.flag = True
     i.delete()

@@ -8,17 +8,18 @@ from django.db import models
 
 class Item(models.Model):
     item_name = models.CharField(max_length=20)
-    item_description = models.CharField(max_length=120,blank=True,null=True)
+    item_description = models.CharField(max_length=120, blank=True, null=True)
     flag = models.BooleanField(default=False)
-    pub_time =models.DateTimeField(auto_now_add=True)
+    pub_time = models.DateTimeField(auto_now_add=True)
     priority = models.IntegerField()
-    user =models.ForeignKey(User,on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __unicode__(self):
         return self.item_name
 
     class Meta:
-        ordering = ['-priority','pub_time']
+        ordering = ['-priority', 'pub_time']
+
 
 class Biu(models.Model):
     biu = models.CharField(max_length=120)

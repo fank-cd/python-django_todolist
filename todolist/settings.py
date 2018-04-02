@@ -123,7 +123,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 PASSWORD_HASHERS = (
-'django.contrib.auth.hashers.PBKDF2PasswordHasher',
-'django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher',
+    'django.contrib.auth.hashers.PBKDF2PasswordHasher',
+    'django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher',
 )
-LOGIN_URL ='/default/login'
+LOGIN_URL = '/default/login'
