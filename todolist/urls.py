@@ -21,4 +21,5 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^simple/', include('Simpletodo.urls')),
     url(r'^default/', include('defaulttodo.urls')),
+    url(r'^advance/', include('advance.urls')),
 ]

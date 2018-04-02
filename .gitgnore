@@ -1,0 +1,5 @@
+#test
+.idea/
+db.sqlite3
+.gitgnore
+
