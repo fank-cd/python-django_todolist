@@ -26,6 +26,14 @@ def index(request):
 
 
 @login_required()
+def notfinish_item(request,pk):
+    i = get_object_or_404(Item,pk=pk)
+    if i.flag:
+        i.flag = False
+        i.save()
+    return HttpResponseRedirect('/default/')
+
+@login_required()
 def tofinish_item(request, pk):
     i = get_object_or_404(Item, pk=pk)
     print i.flag
