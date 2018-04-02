@@ -1,24 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="80c59d1b-39de-4793-8dec-1be79babebc2" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Simpletodo/urls.py" afterPath="$PROJECT_DIR$/Simpletodo/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Simpletodo/views.py" afterPath="$PROJECT_DIR$/Simpletodo/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/defaulttodo/froms.py" afterPath="$PROJECT_DIR$/defaulttodo/froms.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/defaulttodo/models.py" afterPath="$PROJECT_DIR$/defaulttodo/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/defaulttodo/templates/base.html" afterPath="$PROJECT_DIR$/defaulttodo/templates/base.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/defaulttodo/templates/default/add_item.html" afterPath="$PROJECT_DIR$/defaulttodo/templates/default/add_item.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/defaulttodo/templates/default/index.html" afterPath="$PROJECT_DIR$/defaulttodo/templates/default/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/defaulttodo/templates/default/item_detail.html" afterPath="$PROJECT_DIR$/defaulttodo/templates/default/item_detail.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/defaulttodo/templates/default/login.html" afterPath="$PROJECT_DIR$/defaulttodo/templates/default/login.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/defaulttodo/templates/default/register.html" afterPath="$PROJECT_DIR$/defaulttodo/templates/default/register.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/defaulttodo/templates/default/update_item.html" afterPath="$PROJECT_DIR$/defaulttodo/templates/default/update_item.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/defaulttodo/templates/default/zanshi.html" afterPath="$PROJECT_DIR$/defaulttodo/templates/default/zanshi.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/defaulttodo/urls.py" afterPath="$PROJECT_DIR$/defaulttodo/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/defaulttodo/views.py" afterPath="$PROJECT_DIR$/defaulttodo/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/todolist/settings.py" afterPath="$PROJECT_DIR$/todolist/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/todolist/urls.py" afterPath="$PROJECT_DIR$/todolist/urls.py" />
-    </list>
+    <list default="true" id="80c59d1b-39de-4793-8dec-1be79babebc2" name="Default" comment="" />
     <ignored path="todolist.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -350,7 +333,7 @@
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="preferences.externalTools" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="E:/learning/1.7django/tango_with_django_project" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../python_stucture" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
   </component>
   <component name="RecentsManager">
@@ -543,7 +526,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32950193" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34724092" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34724092" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32950193" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
