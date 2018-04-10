@@ -12,6 +12,7 @@ from django.contrib.auth.decorators import login_required
 
 def index(request):
     item_list = []
+    item_list_done = []
     if request.user.is_authenticated():
         user = request.user
         item_list = Item.objects.filter(
@@ -161,14 +162,3 @@ def user_logout(request):
     return HttpResponseRedirect('/default')
 
 
-def zanshi(request):
-    if request.method == "POST":
-        form = BiuForm(request.POST)
-        if form.is_valid():
-            instance = form.save(commit=False)
-            instance.biu = request.POST['biu']
-            #instance.biu =request.POST.get('bi1u')
-            instance.save()
-    else:
-        form = BiuForm()
-    return render(request, 'default/zanshi.html', {'form': form})
