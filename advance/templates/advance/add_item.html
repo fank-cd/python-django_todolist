@@ -1,0 +1,39 @@
+{% extends 'base_advance.html' %}
+
+{% load staticfiles %}
+
+{% block title %}Add item{% endblock %}
+
+{% block body_block %}
+<div class="jumbotron jumbotron-center">
+    <h2>Add Item </h2>
+</div>
+    <form class="form-horizontal" method="post" action="/advance/add_item/">
+        {% csrf_token %}
+      <div class="form-group">
+        <label for="inputitemname" class="col-sm-2 control-label">Item Name</label>
+        <div class="col-sm-2">
+          <input name="itemname" type="text" class="form-control" id="inputitemname" placeholder="Itemname" required="required">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="inputitemdescription" class="col-sm-2 control-label">Description(可为空)</label>
+        <div class="col-sm-2">
+          <input name="itemdescription" type="text" class="form-control" id="inputitemdescription" placeholder="Description">
+        </div>
+      </div>
+
+        <div class="form-group">
+        <label for="inputitempriority" class="col-sm-2 control-label">Priority</label>
+        <div class="col-sm-2">
+          <input name="itempriority" type="number" min="0" max="10" class="form-control" id="inputitempriority" placeholder="Priority" required="required">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <button type="submit" class="btn btn-default">走着</button>
+        </div>
+      </div>
+    </form>
+{% endblock %}

@@ -24,19 +24,26 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Todo List</a>
+          <a class="navbar-brand" href="{% url 'advance:index' %}">Todo List</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">Add list</a></li>
-            <li><a href="#contact">About</a></li>
+            <li class="active"><a href="{% url 'advance:index' %}">Home</a></li>
+            <li><a href="{% url 'advance:add_item'%}">Add list</a></li>
+            <li><a href="#">About</a></li>
           </ul>
 {% block navbar %}
           <ul class="nav navbar-nav navbar-right">
-              <li><a href="{% url 'advance:user_login' %}">Login</a> </li> </ul>
-{% endblock %}
+                {% if user.is_authenticated %}
+              <li><a href="{% url 'advance:user_logout' %}">Logout</a> </li>
+                {% else %}
+              <li><a href="{% url 'advance:user_login' %}">Login</a> </li>
+              <li><a href="{% url 'advance:register' %}">Register</a> </li>
 
+                {% endif %}
+
+{% endblock %}
+</ul>
         </div><!--/.nav-collapse -->
       </div>
     </nav>

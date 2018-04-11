@@ -2,10 +2,12 @@
 
 {% load staticfiles %}
 
-{% block title %}index{% endblock %}
+{% block title %}Index{% endblock %}
 
 {% block body_block %}
 <div class="jumbotron jumbotron-center">
     <h2>There is index page </h2>
+    {% if item_list %
+    {{ item_list }}
 </div>
 {% endblock %}
