@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 
-class item_advance (models.Model):
+class Item_advance (models.Model):
     item_name = models.CharField(max_length=60)
     item_descrip = models.CharField(max_length=120)
     item_prority = models.IntegerField()
@@ -19,3 +19,4 @@ class item_advance (models.Model):
 
     class Meta:
         ordering = ['-item_prority', 'pub_time']
+

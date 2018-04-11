@@ -1,0 +1,25 @@
+{% extends 'base_advance.html' %}
+
+{% block title %}register{% endblock %}
+
+{% block body_block %}
+<body>
+
+    <div class="container">
+
+      <form class="form-signin"  method="post" action="/advance/login/">
+          {% csrf_token %}
+        <h2 class="form-signin-heading">Please sign in</h2>
+        <label for="inputtext" class="sr-only">Username</label>
+        <input name="username" type="text" id="inputtext" class="form-control" placeholder="Username" required autofocus>
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input name="password" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+      </form>
+
+    </div> <!-- /container -->
+
+  </body>
+</html>
+
+{% endblock %}
