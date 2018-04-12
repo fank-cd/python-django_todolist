@@ -1,0 +1,18 @@
+{% extends 'base_advance.html' %}
+
+{% block title %}List{% endblock %}
+
+{% block body_block %}
+<div class="jumbotron jumbotron-center">
+    <h1>Welcome to Todolist site</h1>
+    <h2>Hello !{{ user.username }} <small> 以下是你所有的Todo List</small></h2>
+    {% for i in item_list %}
+</div>
+<div class="container">
+<ul class="list-group">
+  <li class="list-group-item">{{ i.item_name }}</li>
+</ul>
+    </div>
+{% endfor %}
+
+{% endblock %}

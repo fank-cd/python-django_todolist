@@ -9,15 +9,29 @@ from django.contrib.auth.decorators import login_required
 
 def index(request):
     item_list = []
-    item_list_done = []
     if request.user.is_authenticated():
         user = request.user
         item_list = Item_advance.objects.filter(
             user=user, flag=False).order_by('-item_prority')
-        item_list_done = Item_advance.objects.filter(
-            user=user, flag=True).order_by('-pub_time')[:5]
-    context = {'item_list': item_list, 'item_list_done': item_list_done}
+    context = {'item_list': item_list}
     return render(request, 'advance/index.html', context=context)
+
+@login_required(login_url='/advance/login')
+
+def list(requset):
+    item_list = []
+    item_donelist = []
+    if requset.user.is_authenticated():
+        user = requset.user
+        item_list = Item_advance.objects.filter(
+            user=user,flag =False).order_by('-pub_time')
+
+        item_donelist = Item_advance.objects.filter(
+            user=user, flag=True).order_by('-pub_time')
+
+    context ={'item_list':item_list,'item_donelist':item_donelist}
+
+    return render(requset,'advance/list.html',context=context)
 
 @login_required(login_url='/advance/login')
 def add_item(request):
