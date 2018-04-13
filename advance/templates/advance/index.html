@@ -10,7 +10,7 @@
     <h2>Hello !{{ user.username }} <small> 以下是你的Todo List （按照优先度由大到小排序)</small></h2>
     {% else %}
     <h2>Welcome to Todolist site</h2>
-    <h3><small>要体验完整功能，请先登录啊傻逼</small></h3>
+    <h3><small>要体验完整功能，请先登录</small></h3>
     <p><a class="btn btn-primary btn-lg" href="{% url 'advance:user_login' %}" role="button">Login </a></p>
     {% endif %}
 </div>
@@ -19,19 +19,19 @@
     {% for i in item_list %}
         {% if i.item_prority  == 10 %}
         <div class="list-group">
-        <a href="#" class="list-group-item list-group-item-danger">{{ i.item_name }}</a>
+        <a href="{% url 'advance:item_detail' i.id %}" class="list-group-item list-group-item-danger">{{ i.item_name }}</a>
         </div>
         {% elif i.item_prority >= 5 and i.item_prority < 10 %}
         <div class="list-group">
-        <a href="#" class="list-group-item list-group-item-warning">{{ i.item_name }}</a>
+        <a href="{% url 'advance:item_detail' i.id %}" class="list-group-item list-group-item-warning">{{ i.item_name }}</a>
         </div>
         {% elif i.item_prority > 1 and i.item_prority < 5 %}
         <div class="list-group">
-            <a href="#" class="list-group-item list-group-item-info">{{ i.item_name }}</a>
+            <a href="{% url 'advance:item_detail' i.id %}" class="list-group-item list-group-item-info">{{ i.item_name }}</a>
         </div>
         {% elif i.item_prority == 1 %}
         <div class="list-group">
-        <a href="#" class="list-group-item list-group-item-success">{{ i.item_name }}</a>
+        <a href="{% url 'advance:item_detail' i.id %}" class="list-group-item list-group-item-success">{{ i.item_name }}</a>
         </div>
         {% endif %}
     {% endfor %}

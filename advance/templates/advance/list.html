@@ -6,13 +6,55 @@
 <div class="jumbotron jumbotron-center">
     <h1>Welcome to Todolist site</h1>
     <h2>Hello !{{ user.username }} <small> 以下是你所有的Todo List</small></h2>
-    {% for i in item_list %}
 </div>
-<div class="container">
-<ul class="list-group">
-  <li class="list-group-item">{{ i.item_name }}</li>
-</ul>
-    </div>
-{% endfor %}
 
+    {% if item_list|length == 0 %}
+        <h3>当前没有未完成的事项</h3>
+    {% else %}
+        <table class="table table-hover">
+        <caption><h3>正在进行</h3></caption>
+          <tr>
+              <th>Id</th>
+              <th>itemname</th>
+              <th>description</th>
+              <th>Priority</th>
+              <th>pub time</th>
+          </tr>
+                   {% for i in item_list %}
+          <tr class="active info" >
+
+              <td>{{ i.id }}</td>
+              <td>{{ i.item_name }}</td>
+              <td>{{ i.item_descrip }}</td>
+              <td>{{ i.item_prority }}</td>
+              <td>{{ i.pub_time }}</td>
+          </tr>
+            {% endfor %}
+        </table>
+    {% endif %}
+
+    {% if item_donelist|length == 0 %}
+        <h3>当前没有未完成的事项</h3>
+    {% else %}
+        <table class="table table-hover">
+        <caption><h3>正在进行</h3></caption>
+          <tr>
+              <th>Id</th>
+              <th>itemname</th>
+              <th>description</th>
+              <th>Priority</th>
+              <th>pub time</th>
+          </tr>
+                   {% for i in item_donelist %}
+          <tr class="active info" >
+
+              <td>{{ i.id }}</td>
+              <td>{{ i.item_name }}</td>
+              <td>{{ i.item_descrip }}</td>
+              <td>{{ i.item_prority }}</td>
+              <td>{{ i.pub_time }}</td>
+          </tr>
+            {% endfor %}
+        </table>
+    {% endif %}
 {% endblock %}

@@ -9,5 +9,6 @@ urlpatterns = [
     url(r'^login/$',views.user_login,name='user_login'),
     url(r'^logout/$',views.user_logout,name='user_logout'),
     url(r'^add_item/$', views.add_item, name='add_item'),
-    url(r'list/$',views.list,name='list')
+    url(r'list/$',views.list,name='list'),
+    url(r'^(?P<pk>[0-9]+)/item/$', views.item_detail, name='item_detail'),
 ]
