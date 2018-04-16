@@ -3,5 +3,59 @@
 {% block title %}Login{% endblock %}
 
 {% block body_block %}
+    {% if item_name %}
+<div class="row">
+    <div class="panel panel-default" style="padding-top: 10px;">
+      <!-- Default panel contents -->
+      <div class="panel-heading"><h2 style="text-align:center">{{ item_name }}</h2></div>
+        {% if item_description %}
+        <div class="panel-body">
+        <p>描述： {{ item_description }}</p>
+      </div>
+         {% endif %}
+      <!-- Table -->
 
+      <table class="table">
+          <tr>
+              <th>itemname</th>
+              <th>description</th>
+              <th>Priority</th>
+              <th>pub time</th>
+              <th>done</th>
+          </tr>
+          <tr class="active info" >
+              <td>{{ item_name }}</td>
+              <td>{{ item_description }}</td>
+              <td>{{ item_prority }}</td>
+              <td>{{ pub_time }}</td>
+              <td>{{ item_flag }}</td>
+          </tr>
+
+      </table>
+    </div>
+    {% if item_flag %}
+    <div class="col-md-4">
+        <a href="{% url 'advance:not_done' item_id %}">
+    <button type="button" class="btn btn-warning">还未完成</button>
+        </a>
+    </div>
+    {% else %}
+    <div class="col-md-4">
+        <a href="{% url 'advance:to_done' item_id %}">
+    <button type="button" class="btn btn-success">完成</button>
+        </a>
+    </div>
+    {% endif %}
+      <div class="col-md-4">
+    <a href="{% url 'advance:update_item' item_id %}">
+    <button type="button" class="btn btn-primary">修改</button>
+     </a>
+  </div>
+  <div class="col-md-4">
+    <a href="{% url 'advance:to_delete' item_id %}">
+    <button type="button" class="btn btn-danger">删除</button>
+     </a>
+  </div>
+    {% endif %}
+</div>
 {% endblock %}

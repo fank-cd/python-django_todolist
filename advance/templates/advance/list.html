@@ -21,23 +21,28 @@
               <th>pub time</th>
           </tr>
                    {% for i in item_list %}
+
           <tr class="active info" >
 
-              <td>{{ i.id }}</td>
+              <a href="{% url 'advance:index' %}"><td>{{ i.id }}</td></a>
+
               <td>{{ i.item_name }}</td>
               <td>{{ i.item_descrip }}</td>
               <td>{{ i.item_prority }}</td>
-              <td>{{ i.pub_time }}</td>
+              <td>{{ i.pub_time }}</td></a>
+              <td><a class="btn btn-default" href="{% url 'advance:item_detail' i.id %}" role="button">详情</a>
+              </a></td>
+
           </tr>
             {% endfor %}
         </table>
     {% endif %}
 
     {% if item_donelist|length == 0 %}
-        <h3>当前没有未完成的事项</h3>
+        <h3>当前没有已经完成的事项</h3>
     {% else %}
         <table class="table table-hover">
-        <caption><h3>正在进行</h3></caption>
+        <caption><h3>已完成</h3></caption>
           <tr>
               <th>Id</th>
               <th>itemname</th>
@@ -45,14 +50,14 @@
               <th>Priority</th>
               <th>pub time</th>
           </tr>
-                   {% for i in item_donelist %}
-          <tr class="active info" >
-
+            {% for i in item_donelist %}
+          <tr class="active danger" >
               <td>{{ i.id }}</td>
               <td>{{ i.item_name }}</td>
               <td>{{ i.item_descrip }}</td>
               <td>{{ i.item_prority }}</td>
               <td>{{ i.pub_time }}</td>
+              <td><a class="btn btn-default" href="{% url 'advance:item_detail' i.id %}" role="button">详情</a>
           </tr>
             {% endfor %}
         </table>

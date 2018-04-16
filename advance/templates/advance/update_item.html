@@ -1,10 +1,73 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
+{% extends 'base_advance.html' %}
+
+{% load staticfiles %}
+
+{% block title %}Update Item{% endblock %}
+
+{% block body_block %}
+<div class="jumbotron jumbotron-center">
+    <h2>Update Item </h2>
+</div>
+    <form class="form-horizontal" method="post" action="/advance/{{ item_id }}/update_item/">
+        {% csrf_token %}
+      <div class="form-group">
+        <label for="inputitemname" class="col-sm-2 control-label">Item Name</label>
+        <div class="col-sm-2">
+          <input name="itemname" type="text" class="form-control" id="inputitemname" placeholder="Itemname" required="required" value="{{ item_name }}">
+        </div>
+      </div>
+      <div class="form-group">
+
+        <label for="inputitemdescription" class="col-sm-2 control-label">Description(可为空)</label>
+        <div class="col-sm-2">
+            {% if item_description %}
+          <input name="itemdescription" type="text" class="form-control" id="inputitemdescription" placeholder="Description" value="{{ item_description }}">
+            {% else %}
+           <input name="itemdescription" type="text" class="form-control" id="inputitemdescription" placeholder="Description">
+            {% endif %}
+        </div>
+      </div>
+
+        <div class="form-group">
+        <label for="inputitempriority" class="col-sm-2 control-label">Priority</label>
+        <div class="col-sm-2">
+          <input name="itempriority" type="number" min="1" max="10" class="form-control" id="inputitempriority" placeholder="Priority" required="required" value="{{ item_prority }}">
+        </div>
+      </div>
+        <label for="inputitempriority" class="col-sm-2 control-label">完成状态</label>
+        <div class="checkbox checkbox">
+            {% if item_flag %}
+                    <div class="col-sm-2">
+                        <input type="radio" name="radio1" id="radio1" value="False">
+                       <label for="radio1">未完成</label>
+                    </div>
+                    <div class="col-sm-2">
+                        <input type="radio" name="radio1" id="radio2" value="True" checked>
+                       <label for="radio2">完成</label>
+                    </div>
+
+            {% else %}
+                    <div class="col-sm-2">
+                        <input type="radio" name="radio1" id="radio1" value="False"checked>
+                       <label for="radio1">未完成</label>
+                    </div>
+                    <div class="col-sm-2">
+                        <input type="radio" name="radio1" id="radio2" value="True">
+                       <label for="radio2">完成</label>
+                    </div>
+            {% endif %}
+        </div>
+
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <button type="submit" class="btn btn-default">走着</button>
+        </div>
+      </div>
+    </form>
+{% endblock %}
+</title>
 </head>
 <body>
-$END$
+
 </body>
 </html>

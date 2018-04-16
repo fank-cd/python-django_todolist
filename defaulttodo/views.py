@@ -86,7 +86,7 @@ def item_detail(request, pk):
 @login_required()
 def delete_item(request, pk):
     i = get_object_or_404(Item, pk=pk)
-    i.flag = True
+    #i.flag = True
     i.delete()
     return HttpResponseRedirect('/default/')
 
@@ -160,5 +160,3 @@ def user_login(request):
 def user_logout(request):
     logout(request)
     return HttpResponseRedirect('/default')
-
-
