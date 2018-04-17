@@ -6,17 +6,52 @@ from advance.models import User, Item_advance
 from django.contrib.auth import authenticate, logout, login
 from django.contrib.auth.decorators import login_required
 from django.core.urlresolvers import reverse
+from django.core.paginator import Paginator
+from datetime import datetime
 # Create your views here.
 
 
 def index(request):
     item_list = []
+
+    """
+    request.session.set_test_cookie()
+    if request.session.test_cookie_worked():
+        print ">>>> TEST COOKIE WORKED!"
+        request.session.delete_test_cookie()
+    """
+
+    current_page = request.GET.get("page",1)
     if request.user.is_authenticated():
         user = request.user
         item_list = Item_advance.objects.filter(
             user=user, flag=False).order_by('-item_prority')
-    context = {'item_list': item_list}
-    return render(request, 'advance/index.html', context=context)
+    pages = Paginator(item_list,5)
+    item_list = pages.page(current_page)
+    context = {'item_list': item_list,"pages":pages}
+
+    visits = request.session.get('visits')
+    if not visits:
+        visits = 1
+
+    reset_last_visit_time = False
+    last_visit = request.session.get("last_visit")
+    if last_visit :
+        last_visit_time = datetime.strptime(last_visit[:-7],"%Y-%m-%d %H:%M:%S")
+
+        if (datetime.now() - last_visit_time).seconds > 10:
+            visits += 1
+            reset_last_visit_time = True
+    else:
+        reset_last_visit_time = True
+
+    if reset_last_visit_time:
+        request.session['last_visit'] = str(datetime.now())
+        request.session['visits'] = visits
+    context['last_visit'] = str(datetime.now())
+    response = render(request,'advance/index.html',context=context)
+
+    return response
 
 
 @login_required(login_url='/advance/login')
